@@ -24,7 +24,11 @@ const storeSchema = new Schema({
                 required: true
             }
         }
-    ]
+    ],
+    character: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Character'
+    }
 });
 
 const StoreFront = model('StoreFront', storeSchema);
