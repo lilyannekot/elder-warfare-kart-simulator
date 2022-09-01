@@ -10,8 +10,8 @@ const userSchema = new Schema({
         required: true
     },
     character: {
-        type: String,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Character'
     }
 });
 

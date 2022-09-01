@@ -35,7 +35,7 @@ const characterSchema = new Schema({
                 type: String
             }
         }
-    ]
+    ],
     store: {
         // not sure what goes here
     }
