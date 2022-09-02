@@ -14,6 +14,14 @@ const characterSchema = new Schema({
         type: Number,
         required: true
     },
+    hitChance: {
+        type: Number,
+        required: true
+    },
+    dodge: {
+        type: Number,
+        required: true
+    }
     credits: {
         type: Number,
         required: true
@@ -38,10 +46,6 @@ const characterSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    store: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'StoreFront'
-    }
 });
 
 const Character = model('Character', characterSchema);
