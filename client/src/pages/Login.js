@@ -21,15 +21,21 @@ const Login = (props) => {
   // Function to allow submitting of form
   const submitForm = async (event) => {
     event.preventDefault();
-    
-    try {
-        const { data } = await login({
-            variables: { ...formState },
-        });
 
-        Auth.login(data.login.token);
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
     } catch (error) {
-        console.error(error)
+      console.error(error);
     }
-  }
+
+    // Clear form values once form is submitted
+    setFormState({
+      email: "",
+      password: "",
+    });
+  };
 };
