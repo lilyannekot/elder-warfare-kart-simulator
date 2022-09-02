@@ -1,7 +1,8 @@
 [
     {
-        "name": "DefaultCharacter",
-        "hp": 50,
+        "_id" : {"$oid":"59316b89008c586bc2214318"},
+        "name": "testCharacter",
+        "hp": 100,
         "damage": 10,
         "credits": 100
     }
