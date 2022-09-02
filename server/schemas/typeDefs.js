@@ -8,7 +8,17 @@ const typeDefs = gql`
         character: Character
     }
 
-    
+    type Character{
+        _id: ID
+        name: String!
+        stats: {
+            hp: Int
+            damage: Int
+        }
+        credits: Int
+        Items: [String]
+        Abilities: [String]
+    }
 `
 
 module.exports = typeDefs
