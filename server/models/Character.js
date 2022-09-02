@@ -14,21 +14,31 @@ const characterSchema = new Schema({
         type: Number,
         required: true
     },
+    hitChance: {
+        type: Number,
+        required: true
+    },
+    dodge: {
+        type: Number,
+        required: true
+    }
     credits: {
         type: Number,
         required: true
     },
     items: [
         {
-            itemName: {
-                type: String
+            itemId: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Item'
             }
         }
     ],
     abilities: [
         {
-            abilityName: {
-                type: String
+            abilityId: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Ability'
             }
         }
     ],
@@ -36,10 +46,6 @@ const characterSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    store: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'StoreFront'
-    }
 });
 
 const Character = model('Character', characterSchema);
