@@ -34,27 +34,49 @@ const Login = (props) => {
 
     // Clear form values once form is submitted
     setFormState({
-      email: "",
+      username: "",
       password: "",
     });
   };
 
-  return(
+  return (
     <main className="flex-row justify-center mb-4">
-        <div className="col-12">
-            <div className="card">
-                <h4 className="text-light">Login</h4>
-                <div className="card-body">
-                    {data ? (
-                        <p>
-                            <Link to="/">Head to Instructions Page</Link>
-                        </p>
-                    ) : (
-                        
-                    )}
-                </div>
-            </div>
+      <div className="col-12">
+        <div className="card">
+          <h4 className="text-light">Login</h4>
+          <div className="card-body">
+            {data ? (
+              <p>
+                <Link to="/">Head to Instructions Page</Link>
+              </p>
+            ) : (
+              <form onSubmit={submitForm}>
+                <input
+                  placeholder="username"
+                  name="username"
+                  type="username"
+                  value={formState.username}
+                  onChange={formChanges}
+                />
+                <input
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onchange={formChanges}
+                />
+                <button
+                  className="btn btn-danger"
+                  style={{ cursor: "pointer" }}
+                  type="submit"
+                >
+                  Login
+                </button>
+              </form>
+            )}
+          </div>
         </div>
+      </div>
     </main>
-  )
+  );
 };
