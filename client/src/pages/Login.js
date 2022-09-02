@@ -74,9 +74,15 @@ const Login = (props) => {
                 </button>
               </form>
             )}
+
+            {error && (
+              <div className="bg-danger text-white">{error.message}</div>
+            )}
           </div>
         </div>
       </div>
     </main>
   );
 };
+
+export default Login;
