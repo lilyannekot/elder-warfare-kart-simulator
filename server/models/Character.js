@@ -20,15 +20,17 @@ const characterSchema = new Schema({
     },
     items: [
         {
-            itemName: {
-                type: String
+            itemId: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Item'
             }
         }
     ],
     abilities: [
         {
-            abilityName: {
-                type: String
+            abilityId: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Ability'
             }
         }
     ],

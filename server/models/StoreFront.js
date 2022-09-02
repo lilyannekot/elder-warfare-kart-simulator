@@ -3,9 +3,9 @@ const { Schema, model } = require('mongoose');
 const storeSchema = new Schema({
     items: [
         {
-            name: {
-                type: String,
-                required: true
+            itemId: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Item'
             },
             purchased: {
                 type: Boolean,
@@ -15,9 +15,9 @@ const storeSchema = new Schema({
     ],
     abilities: [
         {
-            name: {
-                type: String,
-                required: true
+            abilityId: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Ability'
             },
             purchased: {
                 type: Boolean,
@@ -32,4 +32,5 @@ const storeSchema = new Schema({
 });
 
 const StoreFront = model('StoreFront', storeSchema);
+
 module.exports = StoreFront;
