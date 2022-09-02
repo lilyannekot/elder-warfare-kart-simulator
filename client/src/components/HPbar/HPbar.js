@@ -1,13 +1,11 @@
 import React from 'react';
 
-export default () => {
+export default ({ currentHP, maxHP }) => {
 
-    const fullHP = 38;
-    const currentHP = 50
-    const maxHP = 100;
+    const fullWidth = 38;
 
     const percentHP = currentHP/maxHP;
-    const HPfill = Math.floor(fullHP * percentHP);
+    const HPfill = Math.floor(fullWidth * percentHP);
 
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={264} viewBox="0 -0.5 44 9" shape-rendering="crispEdges">
