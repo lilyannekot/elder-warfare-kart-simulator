@@ -47,12 +47,12 @@ const Login = (props) => {
           <div className="card-body">
             {data ? (
               <p>
-                <Link to="/">Head to Instructions Page</Link>
+                <Link to="/instructions">Head to Instructions Page</Link>
               </p>
             ) : (
               <form onSubmit={submitForm}>
                 <input
-                  placeholder="username"
+                  placeholder="Username"
                   name="username"
                   type="username"
                   value={formState.username}
