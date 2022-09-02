@@ -32,4 +32,5 @@ const storeSchema = new Schema({
 });
 
 const StoreFront = model('StoreFront', storeSchema);
+
 module.exports = StoreFront;
