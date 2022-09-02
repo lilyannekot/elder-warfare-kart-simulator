@@ -1,1 +1,16 @@
-
+[
+    {
+        "items": [
+            {
+                "name": "Sword",
+                "purchased": false
+            }
+        ],
+        "abilities": [
+            {
+                "name": "Attack",
+                "purchased": false
+            }
+        ]
+    }
+]
