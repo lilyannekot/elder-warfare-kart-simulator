@@ -11,10 +11,8 @@ const typeDefs = gql`
     type Character{
         _id: ID
         name: String!
-        stats: {
-            hp: Int
-            damage: Int
-        }
+        hp: Int
+        damage: Int
         credits: Int
         items: [String]
         abilities: [String]
