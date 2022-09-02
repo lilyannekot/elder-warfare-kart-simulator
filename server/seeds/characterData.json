@@ -1,0 +1,8 @@
+[
+    {
+        "name": "DefaultCharacter",
+        "hp": 50,
+        "damage": 10,
+        "credits": 100
+    }
+]
