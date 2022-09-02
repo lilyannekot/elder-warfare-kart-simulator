@@ -25,6 +25,11 @@ const typeDefs = gql`
         items: [String]
         abilities: [String]
     }
+
+    type Query {
+        getCharacter(_id: ID): Character
+        getStore(_id: ID): Store
+    }
 `
 
 module.exports = typeDefs
