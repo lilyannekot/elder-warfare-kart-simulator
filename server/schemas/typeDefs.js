@@ -30,6 +30,15 @@ const typeDefs = gql`
         getCharacter(_id: ID): Character
         getStore(_id: ID): Store
     }
+
+    type Mutation {
+        addUser(username: String! password: String): User
+        deleteUser(_id: ID): User
+        addCharacter(name: String!): Character
+        updateCharacter(_id: ID ): Character
+        updateItem(_id: ID): Character
+        updateAbility(_id: ID): Character
+    }
 `
 
 module.exports = typeDefs
