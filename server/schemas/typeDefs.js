@@ -16,8 +16,14 @@ const typeDefs = gql`
             damage: Int
         }
         credits: Int
-        Items: [String]
-        Abilities: [String]
+        items: [String]
+        abilities: [String]
+    }
+
+    type Store {
+        _id: ID
+        items: [String]
+        abilities: [String]
     }
 `
 
