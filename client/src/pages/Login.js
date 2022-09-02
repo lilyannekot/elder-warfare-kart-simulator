@@ -38,4 +38,23 @@ const Login = (props) => {
       password: "",
     });
   };
+
+  return(
+    <main className="flex-row justify-center mb-4">
+        <div className="col-12">
+            <div className="card">
+                <h4 className="text-light">Login</h4>
+                <div className="card-body">
+                    {data ? (
+                        <p>
+                            <Link to="/">Head to Instructions Page</Link>
+                        </p>
+                    ) : (
+                        
+                    )}
+                </div>
+            </div>
+        </div>
+    </main>
+  )
 };
