@@ -46,10 +46,6 @@ const characterSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    store: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'StoreFront'
-    }
 });
 
 const Character = model('Character', characterSchema);
