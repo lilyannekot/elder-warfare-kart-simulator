@@ -17,4 +17,19 @@ const Login = (props) => {
       [name]: value,
     });
   };
+
+  // Function to allow submitting of form
+  const submitForm = async (event) => {
+    event.preventDefault();
+    
+    try {
+        const { data } = await login({
+            variables: { ...formState },
+        });
+
+        Auth.login(data.login.token);
+    } catch (error) {
+        console.error(error)
+    }
+  }
 };
