@@ -18,6 +18,7 @@ db.once('open', async () => {
         const users = await User.insertMany(userData);
 
         // need to set up associations
+        // 
     }
     catch (err) {
         console.error(err);
