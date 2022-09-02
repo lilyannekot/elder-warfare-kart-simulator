@@ -6,18 +6,14 @@ const characterSchema = new Schema({
         required: true,
         trim: true
     },
-    stats: [
-        {
-            hp: {
-                type: Number,
-                required: true
-            },
-            damage: {
-                type: Number,
-                required: true
-            }
-        }
-    ],
+    hp: {
+        type: Number,
+        required: true
+    },
+    damage: {
+        type: Number,
+        required: true
+    },
     credits: {
         type: Number,
         required: true
@@ -35,9 +31,14 @@ const characterSchema = new Schema({
                 type: String
             }
         }
-    ]
+    ],
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
     store: {
-        // not sure what goes here
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'StoreFront'
     }
 });
 
