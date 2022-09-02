@@ -48,7 +48,7 @@ const Signup = () => {
                 <Link to="/instructions">Head to Instructions Page</Link>
               </p>
             ) : (
-              <form onSubmit={formChanges}>
+              <form onSubmit={submitForm}>
                 <input
                   placeholder="Username"
                   name="username"
