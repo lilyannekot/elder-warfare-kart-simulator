@@ -13,20 +13,26 @@ const typeDefs = gql`
         name: String!
         hp: Int
         damage: Int
+        hitChance: Float
+        dodge: Float
         credits: Int
-        items: [String]
-        abilities: [String]
+        items: [Item]
+        abilities: [Ability]
     }
 
-    type Store {
-        _id: ID
-        items: [String]
-        abilities: [String]
+    type Item {
+        name: String
+        description: String
+    }
+
+    type Ability {
+        name: String
+        description: String
     }
 
     type Query {
         getCharacter(_id: ID): Character
-        getStore(_id: ID): Store
+        getCredits(_id: ID): Character
     }
 
     type Mutation {
