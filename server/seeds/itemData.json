@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Vitamins",
+        "description": "Increase hit chance"
+    },
+    {
+        "name": "Medicare",
+        "description": "2nd Life"
+    },
+    {
+        "name": "Cane",
+        "description": "Low damage increase"
+    },
+    {
+        "name": "Frying Pan",
+        "description": "Medium damage increase"
+    },
+    {
+        "name": "Life Alert Whip",
+        "description": "Large damage increase"
+    },
+    {
+        "name": "Granpa's Favorite Sweater",
+        "description": "Low hp increase"
+    },
+    {
+        "name": "Stem Cell Injection",
+        "description": "Large hp increase"
+    },
+    {
+        "name": "Morning Coffee",
+        "description": "Go first in combat"
+    },
+    {
+        "name": "Air Monarchs",
+        "description": "Low dodge increase"
+    },
+    {
+        "name": "Hip Replacement Surgery",
+        "description": "Large dodge increase"
+    },
+    {
+        "name": "30 Minute Nap",
+        "description": "Damage and Health increase"
+    }
+]
