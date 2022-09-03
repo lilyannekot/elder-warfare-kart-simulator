@@ -22,14 +22,14 @@ const resolvers = {
         updateCharacter: async (parent, { characterId }) => {
             return await Character.findOneAndUpdate({ _id: characterId})
         },
-        updateItem: async (parent, { characterId, itemName}) => {
+        updateCharacterItem: async (parent, { characterId, itemName}) => {
             return Character.findOneAndUpdate(
                 {_id: characterId},
                 {$pull: {item: {name: itemName}}},
                 {new: true}
             )
         },
-        updateAbility: async (parent, { characterId, abilityName}) => {
+        updateCharacterAbility: async (parent, { characterId, abilityName}) => {
             return Character.findOneAndUpdate(
                 {_id: characterId },
                 {$pull: {ability: {name: abilityName}}},

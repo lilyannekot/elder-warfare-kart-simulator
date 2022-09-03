@@ -39,8 +39,8 @@ const typeDefs = gql`
         addUser(username: String! password: String): User
         deleteUser(_id: ID): User
         addCharacter(name: String!): Character
-        updateCharacter(_id: ID ): Character
-        updateItem(_id: ID): Character
+        // updateCharacter(_id: ID): Character
+        updateChracterItem(_id: ID): Character
         updateAbility(_id: ID): Character
     }
 `
