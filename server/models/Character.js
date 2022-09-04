@@ -19,10 +19,6 @@ const characterSchema = new Schema({
     type: Number,
     required: true,
   },
-  dodge: {
-    type: Number,
-    required: true,
-  },
   credits: {
     type: Number,
     required: true,
