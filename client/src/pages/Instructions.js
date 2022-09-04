@@ -1,6 +1,6 @@
 import '../index.css'
 
-function Instructions( play ) {
+function Instructions() {
     return (
         <div className="instructions">
             <h1>Welcome to Elder Warfare Kart Simulator!</h1>
