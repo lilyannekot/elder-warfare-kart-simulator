@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import HPbar from './components/HPbar/HPbar'
+import HPbar from './components/BattlePage/HPbar/HPbar'
 
 function App() {
 
