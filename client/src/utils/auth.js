@@ -1,5 +1,4 @@
 import decode from "jwt-decode";
-import { loc } from "../../../server/schemas/typeDefs";
 
 class AuthService {
   loggedIn() {
