@@ -1,4 +1,4 @@
-
+import React from "react";
 
 function Instructions() {
     return (
@@ -11,3 +11,5 @@ function Instructions() {
         </div>
     )
 }
+
+export default Instructions();
