@@ -8,7 +8,7 @@ const typeDefs = gql`
         character: Character
     }
 
-    type Character{
+    type Character {
         _id: ID
         name: String!
         hp: Int
