@@ -1,6 +1,6 @@
+import '../index.css'
 
-
-function Instructions() {
+function Instructions( play ) {
     return (
         <div className="instructions">
             <h1>Welcome to Elder Warfare Kart Simulator!</h1>
@@ -16,6 +16,9 @@ function Instructions() {
                 <li>Run-away: leave the battle.</li>
             </ul>
             <h4>If you lose, your account is permanently deleted.</h4>
+            <button className="continue-button" onClick={play}>Play!</button>
         </div>
     )
 }
+
+export default Instructions;
