@@ -5,11 +5,15 @@ import Login from "./pages/Login";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
+
+  // state for character HP(hitpoints)
+  const [HP, setHP] = useState(100);
+
   return (
     <div>
       <Routes>
         <Route path="/" element={<Login />}></Route>
-      </Routes>
+      </Routes
     </div>
   );
 }
