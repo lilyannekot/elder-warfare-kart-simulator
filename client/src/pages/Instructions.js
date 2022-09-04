@@ -16,7 +16,7 @@ function Instructions( play ) {
                 <li>Run-away: leave the battle.</li>
             </ul>
             <h4>If you lose, your account is permanently deleted.</h4>
-            <button className="continue-button" onClick={play}>Play!</button>
+            <button className="continue-button"><Link to="/Battle">Play!</Link></button>
         </div>
     )
 }
