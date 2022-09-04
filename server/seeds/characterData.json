@@ -4,6 +4,7 @@
         "name": "testCharacter",
         "hp": 100,
         "damage": 10,
+        "hitChance": 0.3,
         "credits": 100
     }
 ]
