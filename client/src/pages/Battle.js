@@ -4,4 +4,7 @@ import { useMutation } from "@apollo/client";
 
 const Battle = (props) => {
     
-}
+    return (
+        
+    );
+};
