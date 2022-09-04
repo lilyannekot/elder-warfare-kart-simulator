@@ -16,4 +16,13 @@ class AuthService {
       return true;
     }
   }
+
+  getToken() {
+    return localStorage.getItem("id_token");
+  }
+
+  login(idToken) {
+    localStorage.setItem("id_token", idToken);
+    window.location.assign("/");
+  }
 }
