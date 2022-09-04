@@ -1,5 +1,7 @@
 import React from "react";
 
+function Loser() {
+
 return (
     <main className="flex-row justify-center">
         <div>
@@ -7,3 +9,7 @@ return (
         </div>
     </main>
 )
+
+};
+
+export default Loser;
