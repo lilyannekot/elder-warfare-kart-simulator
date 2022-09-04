@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import HPbar from './components/BattlePage/HPbar/HPbar'
 
 function App() {
+
+  // state for character HP(hitpoints)
+  const [HP, setHP] = useState(100);
+
   return (
     <div className="App">
-      <HPbar
-        currentHP={50}
-        maxHP={100}
-      />
+  
     </div>
   );
 }

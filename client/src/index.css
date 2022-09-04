@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.hud {
+  display:inline-block;
+  width: 400px;
+  height: 200px
+}
+
+.hud-item {
+  margin: 3px;
+  display: inline-block;
+}
