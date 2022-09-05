@@ -4,9 +4,9 @@ const Footer = () => {
   return (
     <footer className="bg-danger text-light">
       <div className="text-center">
-        <h4>
+        <p>
           Made by Jonathan Mengal, Pat Barkley, Lily Kot, and Liam McCarthy
-        </h4>
+        </p>
       </div>
     </footer>
   );
