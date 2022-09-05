@@ -11,10 +11,10 @@ function Instructions() {
             <h4>After combat, you are taken to a store page where you can choose to buy items for the next battle.</h4>
             <h4>You have four abilities:</h4>
             <ul>
-                <li>Slap: Basic attack, high hit chance.</li>
-                <li>Nap time: replenishes hp</li>
-                <li>Run-over: High damage attack with low hit chance</li>
-                <li>Run-away: leave the battle.</li>
+                <li>Slap: Basic attack</li>
+                <li>Nap time: Replenishes hp</li>
+                <li>Run-over: Random damage</li>
+                <li>Run-away: Leave the battle.</li>
             </ul>
             <h4>If you lose, your account is permanently deleted.</h4>
             <button className="continue-button"><Link to="/Battle">Play!</Link></button>
