@@ -1,14 +1,26 @@
-import { gql } from '@apollo/client'
+import { gql } from "@apollo/client";
+
+export const LOGIN_USER = gql`
+  mutation login($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
+      token
+      user {
+        _id
+        username
+      }
+    }
+  }
+`;
 
 export const MUTATION_ADD_USER = gql`
-    mutation addUser($username: String!, $password: String!){
-        addUser(username: $username, password: $password){
-            _id
-            username
-            password
-        }
+  mutation addUser($username: String!, $password: String!) {
+    addUser(username: $username, password: $password) {
+      _id
+      username
+      password
     }
-`
+  }
+`;
 
 export const MUTATION_DEL_USER = gql`
     mutation deleteUser($_id: ID)
@@ -18,7 +30,7 @@ export const MUTATION_DEL_USER = gql`
             password
             character
         }
-`
+`;
 
 export const MUTATION_ADD_CHARACTER = gql`
     mutation addCharacter($name: String!)
@@ -33,7 +45,7 @@ export const MUTATION_ADD_CHARACTER = gql`
             items
             abilities
         }
-`
+`;
 
 // export const MUTATION_UPDATE_CHARACTER  = gql`
 //     mutation updateCharacter($_id: ID)
@@ -51,7 +63,7 @@ export const MUTATION_UPDATE_CHARACTER_ITEM = gql`
                 description
             }
         }
-`
+`;
 export const MUTATION_UPDATE_CHARACTER_ABILITY = gql`
     mutation updateCharacterAbility($_id: ID)
         updateCharacterAbility(_id: $_id){
@@ -61,4 +73,4 @@ export const MUTATION_UPDATE_CHARACTER_ABILITY = gql`
                 description
             }
         }
-`
+`;
