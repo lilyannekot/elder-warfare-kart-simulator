@@ -1,7 +1,6 @@
 [
     {
-        "username": "testUser",
-        "password": "password123",
-        "character": {"$oid":"59316b89008c586bc2214318"}
+        "email": "test@test.com",
+        "password": "password123"
     }
 ]
