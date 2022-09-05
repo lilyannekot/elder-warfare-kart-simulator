@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ currentHP, maxHP }) => {
+const HPbar = ({ currentHP, maxHP }) => {
 
     const fullWidth = 38;
 
@@ -19,3 +19,5 @@ export default ({ currentHP, maxHP }) => {
         </svg>
     );
 }
+
+export default HPbar;

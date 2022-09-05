@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default ({ enemyHP, enemyMaxHP }) => {
+const EnemyHPbar = ({ enemyCurrentHP, enemyMaxHP }) => {
     
     const fullWidth = 38;
 
-    const percentHP = enemyHP/enemyMaxHP;
+    const percentHP = enemyCurrentHP/enemyMaxHP;
     const HPfill = Math.floor(fullWidth * percentHP);
 
     return (
@@ -15,7 +15,9 @@ export default ({ enemyHP, enemyMaxHP }) => {
             <path stroke="#222034" d="M3 3h38M3 4h38M3 5h38" />
 
             // This rect is the HP for the enemy that changes width across the bar depending on hp.
-            <rect fill="orange" x={3} y={2.5} width={HPfill} height={3} />
+            <rect fill="red" x={3} y={2.5} width={HPfill} height={3} />
         </svg>
     );
 }
+
+export default EnemyHPbar;

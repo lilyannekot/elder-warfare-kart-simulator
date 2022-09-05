@@ -44,6 +44,8 @@ const client = new ApolloClient({
 
 export default function App() {
 
+  let winCount = 0;
+
   // const [HP, setHP] = useState(playerCharacter.hp);
   // const [enemyHP, setEnemyHP] = useState(enemyOne.hp);
 
@@ -93,7 +95,7 @@ export default function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/instructions" element={<Instructions />}></Route>
           <Route path="/store" element={<Storefront />}></Route>
-          <Route path="/battle" element={<Battle />}></Route>
+          <Route path="/battle" element={<Battle winCount={winCount} />}></Route>
           <Route path="/loser" element={<Loser />}></Route>
         </Routes>
         </div>
