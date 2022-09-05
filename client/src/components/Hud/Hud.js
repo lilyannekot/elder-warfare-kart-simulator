@@ -1,13 +1,13 @@
 import React from 'react';
-import './index.css';
+//import './index.css';
 
-export default () => {
+const hud = ({ slap, nap, runover }) => {
 
     
     return(
         <div className='hud'>
             {/*Slap ability icon*/}
-            <div className='hud-ability' id="slap">
+            <div className='hud-ability' id="slap" onClick={slap}>
             <svg xmlns="http://www.w3.org/2000/svg" width={80} viewBox="0 -0.5 25 25" shape-rendering="crispEdges">
                 <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
                 <path stroke="#dde4f2" d="M0 0h1M4 0h4M15 0h3M0 1h3M7 1h3M17 1h2M2 2h3M9 2h3M18 2h3M4 3h2M11 3h3M20 3h2M0 4h2M1 5h3M3 6h3M0 10h1M0 11h2M1 12h2M2 13h2" />
@@ -18,7 +18,7 @@ export default () => {
                 <path stroke="#e9b683" d="M21 7h1" />
             </svg>
             </div>
-            <div className='hud-ability' id="nap-heal">
+            <div className='hud-ability' id="nap-heal" onClick={nap}>
              {/*nap heal ability icon*/}
             <svg xmlns="http://www.w3.org/2000/svg" width={80} viewBox="0 -0.5 25 25" shape-rendering="crispEdges">
                 <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
@@ -32,7 +32,7 @@ export default () => {
                 <path stroke="#99e550" d="M2 17h1M1 18h3M2 19h1M19 19h1M18 20h3M19 21h1" />
             </svg>
             </div>
-            <div className='hud-ability' id="run-over">
+            <div className='hud-ability' id="run-over" onClick={runover}>
                 {/* run over ability */}
             <svg xmlns="http://www.w3.org/2000/svg" width={80} viewBox="0 -0.5 25 25" shape-rendering="crispEdges">
                 <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
@@ -71,3 +71,5 @@ export default () => {
         </div>
     )
 }
+
+export default hud;
