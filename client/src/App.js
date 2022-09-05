@@ -68,7 +68,9 @@ function App() {
       currentEnemy = enemySix;
     } else if (battleCount == 7) {
       currentEnemy = enemySeven;
-    } 
+    } else {
+      currentEnemy = enemyEight;
+    }
 
     while (playerTurn == false) {
       currentEnemy.attack(playerCharacter);
