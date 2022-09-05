@@ -55,7 +55,7 @@ function App() {
 
   let playerTurn = false;
   function battleTracker() {
-    const currentEnemy = enemyOne;
+    let currentEnemy = enemyOne;
     if (battleCount == 2) {
       currentEnemy = enemyTwo;
     } else if (battleCount == 3) {
