@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-danger text-light">
       <div className="text-center">
         <p>
-          Made by Jonathan Mengal, Pat Barkley, Lily Kot, and Liam McCarthy
+          Made by Pat Barkley, Lily Kot, and Liam McCarthy
         </p>
       </div>
     </footer>
