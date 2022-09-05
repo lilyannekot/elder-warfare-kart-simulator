@@ -1,5 +1,3 @@
-import { MUTATION_DEL_USER } from "../utils/mutations";
-
 class Character {
     constructor(hp, damage, credits) {
         this.hp = hp;
