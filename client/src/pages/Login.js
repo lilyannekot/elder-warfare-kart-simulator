@@ -5,7 +5,7 @@ import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ username: "", password: "" });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   // Update state based on form input changes
@@ -34,7 +34,7 @@ const Login = (props) => {
 
     // Clear form values once form is submitted
     setFormState({
-      username: "",
+      email: "",
       password: "",
     });
   };
@@ -52,10 +52,10 @@ const Login = (props) => {
             ) : (
               <form onSubmit={submitForm}>
                 <input
-                  placeholder="Username"
-                  name="username"
-                  type="username"
-                  value={formState.username}
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
                   onChange={formChanges}
                 />
                 <input
@@ -63,7 +63,7 @@ const Login = (props) => {
                   name="password"
                   type="password"
                   value={formState.password}
-                  onchange={formChanges}
+                  onChange={formChanges}
                 />
                 <button
                   className="btn btn-danger"

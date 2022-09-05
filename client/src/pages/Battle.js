@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+=======
+import React, { useState } from "react";
+>>>>>>> 41b49cd6dfbb689a0d83018914ecf91f6fe62574
 import Hud from '../components/Hud/Hud';
 import HPbar from '../components/BattlePage/HPbar/HPbar';
 import EnemyHPbar from '../components/BattlePage/HPbar/enemyHPbar';
