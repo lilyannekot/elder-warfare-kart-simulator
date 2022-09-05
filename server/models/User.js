@@ -11,10 +11,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    character: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref:'Character'
-    }
 });
 
 const User = model('User', userSchema);
