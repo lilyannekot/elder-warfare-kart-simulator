@@ -4,9 +4,11 @@ import { useMutation } from "@apollo/client";
 import { MUTATION_ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 
+var validator = require('validator');
+
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: "",
+    email: "",
     password: "",
     characterName: "",
   });
@@ -26,14 +28,18 @@ const Signup = () => {
   const submitForm = async (event) => {
     event.preventDefault();
 
-    try {
-      const { data } = await addUser({
-        variables: { ...formState },
-      });
+    if (validator.isEmail(formState.email)) {
+      try {
+        const { data } = await addUser({
+          variables: { ...formState },
+        });
 
-      Auth.login(data.addUser.token);
-    } catch (error) {
-      console.error(error);
+        Auth.login(data.addUser.token);
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      alert('You must enter a valid email address!')
     }
   };
 
@@ -50,10 +56,10 @@ const Signup = () => {
             ) : (
               <form onSubmit={submitForm}>
                 <input
-                  placeholder="Username"
-                  name="username"
-                  type="username"
-                  value={formState.username}
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
                   onChange={formChanges}
                 />
                 <input
