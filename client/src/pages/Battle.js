@@ -53,6 +53,10 @@ const Battle = (props) => {
     battleTracker();
 
     return (
-        
+        <div>
+
+        </div>
     );
 };
+
+export default Battle;
