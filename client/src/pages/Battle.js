@@ -9,7 +9,5 @@ const Battle = (props) => {
     
 
  
-    return (
-        
-    );
+    
 };
