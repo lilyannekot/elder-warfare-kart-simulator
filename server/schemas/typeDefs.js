@@ -43,6 +43,7 @@ const typeDefs = gql`
         updateCharacter(_id: ID): Character
         updateCharacterItem(_id: ID): Character
         updateCharacterAbility(_id: ID): Character
+        login(username: String! password: String): User
     }
 `;
 

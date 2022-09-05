@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 
 const Battle = (props) => {
  
+
     return (
         <div>
 
@@ -12,3 +13,4 @@ const Battle = (props) => {
 };
 
 export default Battle;
+
