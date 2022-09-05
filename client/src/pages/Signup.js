@@ -67,7 +67,7 @@ const Signup = () => {
                   name="password"
                   type="password"
                   value={formState.password}
-                  onchange={formChanges}
+                  onChange={formChanges}
                 />
                 <input
                   placeholder="Character Name"
