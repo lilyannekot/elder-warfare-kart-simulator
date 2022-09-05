@@ -1,7 +1,7 @@
 import React from "react";
-// import logo from "./logo.svg";
-import "./App.css";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+// import "./App.css";
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
+import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Login from "./pages/Login";
@@ -13,8 +13,22 @@ import Loser from "./pages/Loser";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
 const client = new ApolloClient({
-  uri: "graphql",
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -25,6 +39,7 @@ function App() {
         <div className="flex-column justify-flex-start">
           <Header />
         </div>
+        <div>
         <Routes>
           <Route path="/" element={<Login />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
@@ -33,6 +48,7 @@ function App() {
           <Route path="/battle" element={<Battle />}></Route>
           <Route path="/loser" element={<Loser />}></Route>
         </Routes>
+        </div>
         <div>
           <Footer />
         </div>
