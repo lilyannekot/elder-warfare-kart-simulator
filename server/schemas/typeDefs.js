@@ -39,10 +39,10 @@ const typeDefs = gql`
         addUser(username: String! password: String): User
         deleteUser(_id: ID): User
         addCharacter(name: String!): Character
-        // updateCharacter(_id: ID): Character
-        updateChracterItem(_id: ID): Character
-        updateAbility(_id: ID): Character
+        updateCharacter(_id: ID): Character
+        updateCharacterItem(_id: ID): Character
+        updateCharacterAbility(_id: ID): Character
     }
-`
+`;
 
-module.exports = typeDefs
+module.exports = typeDefs;
