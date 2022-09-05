@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Hud from '../components/Hud/Hud';
 import HPbar from '../components/BattlePage/HPbar/HPbar';
 import EnemyHPbar from '../components/BattlePage/HPbar/enemyHPbar';
