@@ -23,28 +23,31 @@ export const MUTATION_ADD_USER = gql`
 `;
 
 export const MUTATION_DEL_USER = gql`
-    mutation deleteUser($_id: ID)
-        deleteUser(_id: $_id) {
-            _id
-            username
-            password
-            character
-        }
+    mutation deleteUser($_id: ID) {
+      deleteUser(_id: $_id) {
+        _id
+        username
+        password
+        character
+      }
+    }
+        
 `;
 
 export const MUTATION_ADD_CHARACTER = gql`
-    mutation addCharacter($name: String!)
-        addCharction(name: $name){
-            _id
-            name
-            hp
-            damage
-            hitChance
-            dodge
-            credits
-            items
-            abilities
-        }
+    mutation addCharacter($name: String!) {
+      addCharacter(name: $name){
+        _id
+        name
+        hp
+        damage
+        hitChance
+        dodge
+        credits
+        items
+        abilities
+      }
+    }  
 `;
 
 // export const MUTATION_UPDATE_CHARACTER  = gql`
@@ -55,22 +58,24 @@ export const MUTATION_ADD_CHARACTER = gql`
 // `
 
 export const MUTATION_UPDATE_CHARACTER_ITEM = gql`
-    mutation updateCharacterItem($_id: ID)
-        updateChracterItem(_id: $_id){
-            _id
-            items {
-                name
-                description
-            }
+    mutation updateCharacterItem($_id: ID) {
+      updateChracterItem(_id: $_id){
+        _id
+        items {
+          name
+          description
         }
+      }
+    }   
 `;
 export const MUTATION_UPDATE_CHARACTER_ABILITY = gql`
-    mutation updateCharacterAbility($_id: ID)
-        updateCharacterAbility(_id: $_id){
-            _id
-            abilities {
-                name
-                description
-            }
+    mutation updateCharacterAbility($_id: ID) {
+      updateCharacterAbility(_id: $_id){
+        _id
+        abilities {
+          name
+          description
         }
+      }
+    }
 `;
