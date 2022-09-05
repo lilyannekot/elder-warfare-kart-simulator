@@ -13,17 +13,15 @@ import Loser from "./pages/Loser";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 
-import {
-  playerCharacter,
-  enemyOne,
-  enemyTwo,
-  enemyThree,
-  enemyFour,
-  enemyFive,
-  enemySix,
-  enemySeven,
-  enemyEight
-} from "./classes/index";
+const playerCharacter = require('./classes/player');
+const enemyOne = require('./classes/enemies');
+const enemyTwo = require('./classes/enemies');
+const enemyThree = require('./classes/enemies');
+const enemyFour = require('./classes/enemies');
+const enemyFive = require('./classes/enemies');
+const enemySix = require('./classes/enemies');
+const enemySeven = require('./classes/enemies');
+const enemyEight = require('./classes/enemies');
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -70,9 +68,7 @@ function App() {
       currentEnemy = enemySix;
     } else if (battleCount == 7) {
       currentEnemy = enemySeven;
-    } else if (battleCount == 8) {
-      currentEnemy = enemyEight;
-    }
+    } 
 
     while (playerTurn == false) {
       currentEnemy.attack(playerCharacter);
