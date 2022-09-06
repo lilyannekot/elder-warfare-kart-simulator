@@ -6,12 +6,19 @@ const resolvers = {
   Query: {
     users: async (parent) => {
       return User.find({});
-    }
+    },
+    
   },
   Mutation: {
     addUser: async (parent, { email, password }) => {
-      return await User.create({ email, password });
+      const user = await User.create({ email, password })
+      const token = signToken(user)
+      return {
+        token, 
+        user
+      }
     },
+
     deleteUser: async (parent, { userId }) => {
       return await User.findOneAndDelete({ _id: userId });
     },

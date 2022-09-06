@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const mongoose = require("mongoose");
 
 const userSchema = new Schema({
     email: {
@@ -11,6 +10,9 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    winCount: {
+        type: Number
+    }
 });
 
 const User = model('User', userSchema);
