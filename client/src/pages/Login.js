@@ -43,14 +43,15 @@ const Login = (props) => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12">
         <div className="card">
-          <h4 className="text-light">Login</h4>
+          <h4>Login</h4>
           <div>
             {data ? (
               <p>
                 <Link to="/instructions">Head to Instructions Page</Link>
               </p>
             ) : (
-              <form className="card-body" onSubmit={submitForm}>
+              <form className="square border border-dark" onSubmit={submitForm}>
+                <label for="email">Email</label>
                 <input
                   placeholder="Email"
                   name="email"
@@ -58,6 +59,7 @@ const Login = (props) => {
                   value={formState.email}
                   onChange={formChanges}
                 />
+                <label for="password">Password</label>
                 <input
                   placeholder="******"
                   name="password"

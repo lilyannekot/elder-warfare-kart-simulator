@@ -10,7 +10,6 @@ const Signup = () => {
   const [formState, setFormState] = useState({
     email: "",
     password: "",
-    characterName: "",
   });
   const [addUser, { error, data }] = useMutation(MUTATION_ADD_USER);
 
@@ -47,7 +46,7 @@ const Signup = () => {
     <main className="flex-row justify-center">
       <div>
         <div className="card">
-          <h4 className="text-light">Signup</h4>
+          <h4>Signup</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -55,6 +54,7 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={submitForm}>
+                <label for="email">Email</label>
                 <input
                   placeholder="Email"
                   name="email"
@@ -62,17 +62,12 @@ const Signup = () => {
                   value={formState.email}
                   onChange={formChanges}
                 />
+                <label for="password">Password</label>
                 <input
                   placeholder="******"
                   name="password"
                   type="password"
                   value={formState.password}
-                  onChange={formChanges}
-                />
-                <input
-                  placeholder="Character Name"
-                  name="characterName"
-                  value={formState.characterName}
                   onChange={formChanges}
                 />
                 <button
