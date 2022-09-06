@@ -10,6 +10,9 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    winCount: {
+        type: Number
+    }
 });
 
 const User = model('User', userSchema);
