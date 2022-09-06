@@ -44,13 +44,13 @@ const Login = (props) => {
       <div className="col-12">
         <div className="card">
           <h4>Login</h4>
-          <div>
+          <div className="card-body">
             {data ? (
               <p>
                 <Link to="/instructions">Head to Instructions Page</Link>
               </p>
             ) : (
-              <form className="square border border-dark" onSubmit={submitForm}>
+              <form className="form-styling" onSubmit={submitForm}>
                 <label for="email">Email</label>
                 <input
                   placeholder="Email"

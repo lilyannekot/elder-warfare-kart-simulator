@@ -53,7 +53,7 @@ const Signup = () => {
                 <Link to="/instructions">Head to Instructions Page</Link>
               </p>
             ) : (
-              <form onSubmit={submitForm}>
+              <form className="form-styling" onSubmit={submitForm}>
                 <label for="email">Email</label>
                 <input
                   placeholder="Email"

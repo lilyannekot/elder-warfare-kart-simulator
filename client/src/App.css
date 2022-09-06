@@ -46,6 +46,10 @@ form {
   text-align: center;
 }
 
+.form-styling {
+  border: solid;
+}
+
 form input {
   /* box-sizing: border-box; */
   margin: 15px;
