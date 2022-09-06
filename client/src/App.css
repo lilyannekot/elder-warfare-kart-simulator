@@ -113,3 +113,11 @@ footer {
   height: 200px;
   color: #170a45;
 }
+
+/* Mobile responsiveness */
+
+@media screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+}
