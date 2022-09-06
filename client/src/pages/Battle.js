@@ -1,9 +1,4 @@
-
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Announcer from "../components/BattlePage/announcer";
 import Wincount from "../components/BattlePage/Wincount";
 

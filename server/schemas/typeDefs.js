@@ -12,11 +12,6 @@ const typeDefs = gql`
         description: String
     }
 
-    type Ability {
-        name: String
-        description: String
-    }
-
     type Query {
         users: [User]
     }
