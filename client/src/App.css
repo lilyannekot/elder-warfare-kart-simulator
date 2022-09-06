@@ -37,14 +37,18 @@
   }
 }
 
+h1 {
+  margin-top: 25px;
+}
+
 h2 {
   text-align: center;
   margin-top: 15px;
   margin-bottom: 10px;
 }
 
-h1 {
-  margin-top: 25px;
+label {
+  margin-top: 1%;
 }
 
 header {
@@ -55,10 +59,14 @@ header {
 
 .card {
   opacity: 0.90;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-bottom: 2%;
 }
 
 form {
   text-align: center;
+  align-items: center;
 }
 
 .form-styling {
@@ -77,8 +85,8 @@ form input {
 }
 
 button {
-  margin-right: 20px;
   background-color: #170a45;
+  margin-bottom: 15px;
 }
 
 li {
@@ -89,6 +97,8 @@ li {
   background-color: white;
   opacity: 0.90;
   padding-top: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .instruction-boxes {
@@ -106,6 +116,16 @@ li {
   opacity: 0.90;
   padding-top: 20px;
   padding-bottom: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.player-img {
+  transform: scaleX(-1);
+}
+
+.hud-images {
+  align-items: center;
 }
 
 footer {

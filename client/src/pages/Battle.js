@@ -86,8 +86,12 @@ const Battle = ({ winCount }) => {
     <div className="battle-page">
       <div className="row">
         <Wincount wins={playerWins} />
-        <div style={{ display: "flex", height: "500px" }}>
-          <Hud slap={slap} nap={nap} runover={runOver} />\
+      </div>
+      <div className="row" style={{ display: "flex", height: "500px" }}>
+        <div className="col hud-images">
+          <Hud slap={slap} nap={nap} runover={runOver} />
+        </div>
+        <div className="col">
           <button
             className="text-light"
             style={{ height: "20%", width: "20%", margin: "0px" }}
@@ -95,18 +99,20 @@ const Battle = ({ winCount }) => {
           >
             End Turn
           </button>
+        </div>
+        <div className="player-img col">
           <Player />
         </div>
       </div>
       <div className="row">
-        <div className="column">
+        <div className="col">
           <HPbar currentHP={ourHP} maxHP={100 + winCount * 5} />
           <EnemyHPbar
             enemyCurrentHP={enemyHP}
             enemyMaxHP={100 + winCount * 5}
           />
         </div>
-        <div className="column">
+        <div className="col">
           <Announcer announcement={announcement} />
         </div>
       </div>
