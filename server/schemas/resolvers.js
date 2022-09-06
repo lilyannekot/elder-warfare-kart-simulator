@@ -2,6 +2,10 @@ const { User } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
+// function isCorrectPassword() {
+//   return true
+// }
+
 const resolvers = {
   Query: {
     users: async (parent) => {
@@ -23,7 +27,8 @@ const resolvers = {
       return await User.findOneAndDelete({ _id: userId });
     },
     login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+      try {
+        const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError(
@@ -31,16 +36,19 @@ const resolvers = {
         );
       }
 
-      const passwordCheck = await user.isCorrectPassword(password);
+      // const passwordCheck = await user.isCorrectPassword(password);
 
-      if (!passwordCheck) {
-        throw new AuthenticationError("Incorrect password!");
-      }
+      // if (!passwordCheck) {
+      //   throw new AuthenticationError("Incorrect password!");
+      // }
 
       const token = signToken(user);
 
       return { token, user };
-    },
+    } catch (e) {
+      console.log(e)
+    }    
+  },
   },
 };
 
