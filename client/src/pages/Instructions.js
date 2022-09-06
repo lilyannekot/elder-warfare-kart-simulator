@@ -17,10 +17,7 @@ const Instructions = () => {
       <div className="instruction-boxes">
         <h4>How To Play</h4>
         <p className="instruction-p">
-          The game is centered around turn based combat and purchasing items to
-          boost your stats. You have HP and attack stats, your attack stat
-          modifies the damage your abilities do. After combat, you are taken to
-          a store page where you can choose to buy items for the next battle.
+          The game is centered around turn based combat, use your 4 abilities to reduce your opponent's HP to 0 before they do the same to you!
         </p>
       </div>
       <div className="instruction-boxes">
@@ -36,7 +33,7 @@ const Instructions = () => {
             <b>Run-over:</b> High damage attack with low hit chance
           </li>
           <li>
-            <b>Run-away:</b> Leave the battle
+            <b>Run-away:</b> Leave the battle and return here
           </li>
         </ul>
       </div>
