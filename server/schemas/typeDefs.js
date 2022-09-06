@@ -3,21 +3,8 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type User {
         _id: ID
-        username: String!
+        email: String!
         password: String!
-        character: Character
-    }
-
-    type Character {
-        _id: ID
-        name: String!
-        hp: Int
-        damage: Int
-        hitChance: Float
-        dodge: Float
-        credits: Int
-        items: [Item]
-        abilities: [Ability]
     }
 
     type Item {
@@ -25,13 +12,7 @@ const typeDefs = gql`
         description: String
     }
 
-    type Ability {
-        name: String
-        description: String
-    }
-
     type Query {
-        getCharacter(_id: ID): Character
         getCredits(_id: ID): Character
     }
 
