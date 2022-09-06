@@ -6,22 +6,31 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Announcer from "../components/BattlePage/announcer";
 import Wincount from "../components/BattlePage/Wincount";
+import Player from "../components/BattlePage/player";
 
 import Hud from '../components/Hud/Hud';
 import HPbar from '../components/BattlePage/HPbar/HPbar';
 import EnemyHPbar from '../components/BattlePage/HPbar/enemyHPbar';
 
+
 const Battle = ({ winCount }) => {
-    const [ourHP, setHP] = useState(100 + (winCount * 5))
-    const [enemyHP, setEnemyHP] = useState(100 + (winCount * 5));
+
+    let initialHP = (100 + (winCount * 5));
+
+    const [ourHP, setHP] = useState(initialHP)
+    const [enemyHP, setEnemyHP] = useState(initialHP);
     const [haveGone, setHaveGone] = useState(false);
     const [announcement, setAnnouncement] = useState("Fight!");
+    const [playerWins, setPlayerWins] = useState(0);
 
     useEffect(() => {
         if(enemyHP < 1){
             setAnnouncement("you won!");
             winCount = winCount + 1;
-            console.log(winCount);
+            setPlayerWins(playerWins + 1);
+            setHP(initialHP);
+            setEnemyHP(initialHP);
+            setHaveGone(false);
         }
         if(ourHP < 1){
             setAnnouncement("YOU LOST AHAHA");
@@ -71,19 +80,28 @@ const Battle = ({ winCount }) => {
         }
 
     const enemyAttack = () => {
+        if(!haveGone){
+            setAnnouncement("Enemy has already gone, it's your turn!")
+        } else {
             setHP(ourHP - 20);  
             setHaveGone(false);
             setAnnouncement("You just got slapped! -20hp")
+        }
     }
 
     return (
        <div>
-        <Wincount wins={winCount}/>
-        <Hud slap={slap} nap={nap} runover={runOver}/>
+        <Wincount wins={playerWins}/>
+        <div style={{display: 'flex', height: '500px'}}>
+        <Hud slap={slap} nap={nap} runover={runOver}/>\
+        <button style={{height: '62%', margin: '0px'}} onClick={enemyAttack}>End Turn</button>
+        <Player />
+        </div>
+        <div style={{display: 'flex', alignItems: 'center'}}>
         <HPbar currentHP={ourHP} maxHP={100 + (winCount * 5)}/>
         <Announcer announcement={announcement}/>
         <EnemyHPbar enemyCurrentHP={enemyHP} enemyMaxHP={100 + (winCount * 5)} />
-        <button onClick={enemyAttack}>End Turn</button>
+        </div>
        </div>
     );
 };
