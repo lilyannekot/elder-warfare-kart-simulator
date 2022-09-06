@@ -19,6 +19,7 @@
   "dependencies": {
     "dotenv": "^16.0.2",
     "graphql": "^16.6.0",
+    "serve": "^14.0.1",
     "yargs": "^17.5.1"
   }
 }
