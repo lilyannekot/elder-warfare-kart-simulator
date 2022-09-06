@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Announcer from "../components/BattlePage/announcer";
 import Wincount from "../components/BattlePage/Wincount";
 import Player from "../components/BattlePage/player";
@@ -9,6 +10,8 @@ import EnemyHPbar from "../components/BattlePage/HPbar/enemyHPbar";
 
 const Battle = ({ winCount }) => {
   let initialHP = 100 + winCount * 5;
+
+  const navigate = useNavigate();
 
   const [ourHP, setHP] = useState(initialHP);
   const [enemyHP, setEnemyHP] = useState(initialHP);
@@ -72,6 +75,10 @@ const Battle = ({ winCount }) => {
     setHaveGone(true);
   };
 
+  const runAway = () => {
+    navigate("/instructions")
+  }
+
   const enemyAttack = () => {
     if (!haveGone) {
       setAnnouncement("Enemy has already gone, it's your turn!");
@@ -89,7 +96,7 @@ const Battle = ({ winCount }) => {
       </div>
       <div className="row" style={{ display: "flex", height: "500px" }}>
         <div className="col hud-images">
-          <Hud slap={slap} nap={nap} runover={runOver} />
+          <Hud slap={slap} nap={nap} runover={runOver} runaway={runAway}/>
         </div>
         <div className="col">
           <button
