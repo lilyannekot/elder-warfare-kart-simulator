@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const hud = ({ slap, nap, runover }) => {
+const hud = ({ slap, nap, runover, runaway }) => {
 
     
     return(
@@ -49,7 +49,7 @@ const hud = ({ slap, nap, runover }) => {
                 <path stroke="#fbf236" d="M9 17h2M14 17h2" />
             </svg>
             </div>
-            <div className='hud-abililty' id="run-away">
+            <div className='hud-abililty' id="run-away" onClick={runaway}>
                {/* run away ability */}
             <svg xmlns="http://www.w3.org/2000/svg" width={80} viewBox="0 -0.5 25 25" shape-rendering="crispEdges">
                 <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
