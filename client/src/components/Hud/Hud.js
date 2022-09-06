@@ -1,11 +1,11 @@
 import React from 'react';
-//import './index.css';
+
 
 const hud = ({ slap, nap, runover }) => {
 
     
     return(
-        <div className='hud'>
+        <div className='hud' style={{marginRight: '0px'}}>
             {/*Slap ability icon*/}
             <div className='hud-ability' id="slap" onClick={slap}>
             <svg xmlns="http://www.w3.org/2000/svg" width={80} viewBox="0 -0.5 25 25" shape-rendering="crispEdges">
