@@ -52,6 +52,7 @@ const Login = (props) => {
             ) : (
               <form className="form-styling" onSubmit={submitForm}>
                 <label for="email">Email</label>
+                <br />
                 <input
                   placeholder="Email"
                   name="email"
@@ -59,7 +60,9 @@ const Login = (props) => {
                   value={formState.email}
                   onChange={formChanges}
                 />
+                <br />
                 <label for="password">Password</label>
+                <br />
                 <input
                   placeholder="******"
                   name="password"
@@ -67,6 +70,7 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={formChanges}
                 />
+                <br />
                 <button
                   className="btn btn-danger"
                   style={{ cursor: "pointer" }}

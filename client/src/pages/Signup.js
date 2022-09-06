@@ -55,6 +55,7 @@ const Signup = () => {
             ) : (
               <form className="form-styling" onSubmit={submitForm}>
                 <label for="email">Email</label>
+                <br />
                 <input
                   placeholder="Email"
                   name="email"
@@ -62,7 +63,9 @@ const Signup = () => {
                   value={formState.email}
                   onChange={formChanges}
                 />
+                <br />
                 <label for="password">Password</label>
+                <br />
                 <input
                   placeholder="******"
                   name="password"
@@ -70,6 +73,7 @@ const Signup = () => {
                   value={formState.password}
                   onChange={formChanges}
                 />
+                <br />
                 <button
                   className="btn btn-danger"
                   style={{ cursor: "pointer" }}

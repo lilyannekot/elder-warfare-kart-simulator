@@ -95,7 +95,9 @@ const Battle = ({ winCount }) => {
           >
             End Turn
           </button>
-          <Player />
+          <div className="player-img">
+            <Player />
+          </div>
         </div>
       </div>
       <div className="row">

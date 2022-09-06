@@ -40,13 +40,25 @@ const Instructions = () => {
           </li>
         </ul>
       </div>
-      <h5><i>If you lose, your account will be permanently deleted.</i></h5>
-      <button onClick={handleClick} className="btn btn-danger">
-        Back to Login
-      </button>
-      <button onClick={beginBattle} className="btn continue-button btn-danger">
-        Play!
-      </button>
+      <h5>
+        <i>If you lose, your account will be permanently deleted.</i>
+      </h5>
+      <br />
+      <div className="row">
+        <div className="col">
+          <button onClick={handleClick} className="btn btn-danger">
+            Back to Login
+          </button>
+        </div>
+        <div className="col">
+          <button
+            onClick={beginBattle}
+            className="btn continue-button btn-danger"
+          >
+            Play!
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
