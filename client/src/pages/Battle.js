@@ -90,7 +90,7 @@ const Battle = ({ winCount }) => {
           <Hud slap={slap} nap={nap} runover={runOver} />\
           <button
             className="text-light"
-            style={{ height: "62%", margin: "0px" }}
+            style={{ height: "20%", width: "20%", margin: "0px" }}
             onClick={enemyAttack}
           >
             End Turn
