@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
-// import logoVideo from "client/public/assets/logoVideo.mp4";
 
 const Header = () => {
   const logout = (event) => {
@@ -9,13 +8,8 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-danger text-light align-center">
-      <div className="container flex-row justify-center align-center">
-        {/* <div>
-          <Link className="text-light" to="/">
-            <video src={logoVideo} type="video/mp4" />
-          </Link>
-        </div> */}
+    <header className="text-light">
+      <div className="container flex-row justify-center">
         <div>
           {Auth.loggedIn() ? (
             <>
@@ -25,13 +19,14 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link className="btn btn-danger" to="/login">
+              <h1>Elder Warfare Kart Simulator</h1>
+              <Link className="btn text-light" to="/login">
                 Login
               </Link>
-              <Link className="btn btn-danger" to="/signup">
+              <Link className="btn text-light" to="/signup">
                 Signup
               </Link>
-              <Link className="btn btn-danger" to="/instructions">
+              <Link className="btn text-light" to="/instructions">
                 Instructions
               </Link>
             </>

@@ -13,7 +13,7 @@ const Instructions = () => {
 
   return (
     <div className="instructions">
-      <h1>Welcome to Elder Warfare Kart Simulator!</h1>
+      <h2>Instructions</h2>
       <div className="instruction-boxes">
         <h4>How To Play</h4>
         <p className="instruction-p">
@@ -27,7 +27,7 @@ const Instructions = () => {
         <h4>You Have Four Abilities</h4>
         <ul>
           <li>
-            <b>Slap:</b> Basic attack, high hit chance.
+            <b>Slap:</b> Basic attack, high hit chance
           </li>
           <li>
             <b>Nap time:</b> Replenishes hp
@@ -36,7 +36,7 @@ const Instructions = () => {
             <b>Run-over:</b> High damage attack with low hit chance
           </li>
           <li>
-            <b>Run-away:</b> Leave the battle.
+            <b>Run-away:</b> Leave the battle
           </li>
         </ul>
       </div>

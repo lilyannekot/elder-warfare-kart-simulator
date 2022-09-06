@@ -46,14 +46,14 @@ const Signup = () => {
     <main className="flex-row justify-center">
       <div>
         <div className="card">
-          <h4>Signup</h4>
+          <h2>Signup</h2>
           <div className="card-body">
             {data ? (
               <p>
                 <Link to="/instructions">Head to Instructions Page</Link>
               </p>
             ) : (
-              <form onSubmit={submitForm}>
+              <form className="form-styling" onSubmit={submitForm}>
                 <label for="email">Email</label>
                 <input
                   placeholder="Email"
