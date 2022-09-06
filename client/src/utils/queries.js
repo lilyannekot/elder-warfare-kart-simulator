@@ -6,5 +6,6 @@ export const QUERY_GET_CREDITS = gql`
             _id
             credits
         }
+    }
 }
 `
