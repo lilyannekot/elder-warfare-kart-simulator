@@ -116,10 +116,16 @@ li {
   opacity: 0.90;
   padding-top: 20px;
   padding-bottom: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .player-img {
   transform: scaleX(-1);
+}
+
+.hud-images {
+  align-items: center;
 }
 
 footer {
