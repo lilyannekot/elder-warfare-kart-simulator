@@ -8,6 +8,11 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  Nav,
+  NavItem,
+  NavLink
+} from 'reactstrap';
 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -15,7 +20,6 @@ import Instructions from "./pages/Instructions";
 import Battle from "./pages/Battle";
 import Loser from "./pages/Loser";
 import Header from "./components/Header/index";
-import Footer from "./components/Footer/index";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -59,9 +63,23 @@ export default function App() {
             <Route path="/loser" element={<Loser />}></Route>
           </Routes>
         </div>
-        <div>
-          <Footer />
-        </div>
+        <Nav justified className="bg-primary">
+          <NavItem>
+            <NavLink href="https://github.com/lilyannekot" target="_blank" className="text-white">
+              Lily Kot
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="https://github.com/ltmccarthy9" target="_blank" className="text-white">
+              Liam McCarthy
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="https://github.com/pbarkley" target="_blank" className="text-white">
+              Pat Barkley
+            </NavLink>
+          </NavItem>
+        </Nav>
       </Router>
     </ApolloProvider>
   );
