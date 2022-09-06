@@ -13,16 +13,12 @@ const typeDefs = gql`
     }
 
     type Query {
-        getCredits(_id: ID): Character
+        users: [User]
     }
 
     type Mutation {
-        addUser(username: String! password: String): User
+        addUser(email: String! password: String): User
         deleteUser(_id: ID): User
-        addCharacter(name: String!): Character
-        updateCharacter(_id: ID): Character
-        updateCharacterItem(_id: ID): Character
-        updateCharacterAbility(_id: ID): Character
         login(username: String! password: String): User
     }
 `;
