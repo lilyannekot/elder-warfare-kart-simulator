@@ -37,6 +37,18 @@
   }
 }
 
-.card-body {
-  
+h4 {
+  text-align: center;
+  margin-top: 15px;
+}
+
+form {
+  text-align: center;
+}
+
+form input {
+  /* box-sizing: border-box; */
+  margin: 15px;
+  padding: 12px 20px;
+  text-align: center;
 }
