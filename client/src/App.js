@@ -63,19 +63,19 @@ export default function App() {
             <Route path="/loser" element={<Loser />}></Route>
           </Routes>
         </div>
-        <Nav justified className="bg-primary">
+        <Nav justified className="bg-danger footer-nav">
           <NavItem>
-            <NavLink href="https://github.com/lilyannekot" target="_blank" className="text-white">
+            <NavLink href="https://github.com/lilyannekot" target="_blank" className="text-white nav-item">
               Lily Kot
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="https://github.com/ltmccarthy9" target="_blank" className="text-white">
+            <NavLink href="https://github.com/ltmccarthy9" target="_blank" className="text-white nav-item">
               Liam McCarthy
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="https://github.com/pbarkley" target="_blank" className="text-white">
+            <NavLink href="https://github.com/pbarkley" target="_blank" className="text-white nav-item">
               Pat Barkley
             </NavLink>
           </NavItem>

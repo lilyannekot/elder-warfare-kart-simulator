@@ -19,7 +19,7 @@ const Header = () => {
             </>
           ) : (
             <>
-              <h1>Elder Warfare Kart Simulator</h1>
+              <h1><Link style={{ textDecoration: "none", color: "white" }} to="/">Elder Warfare Kart Simulator</Link></h1>
               <Link className="btn text-light" to="/login">
                 Login
               </Link>
