@@ -29,7 +29,7 @@ const Battle = ({ winCount }) => {
       setHaveGone(false);
     }
     if (ourHP < 1) {
-      setAnnouncement("YOU LOST AHAHA");
+      navigate('/Loser')
     }
   }, [enemyHP, ourHP, winCount]);
 
