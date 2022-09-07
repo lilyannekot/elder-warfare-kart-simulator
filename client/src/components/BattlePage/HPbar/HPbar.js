@@ -14,7 +14,7 @@ const HPbar = ({ currentHP, maxHP }) => {
             <path stroke="#cbdbfc" d="M2 2h40M2 3h1M41 3h1M2 4h1M41 4h1M2 5h1M41 5h1M2 6h40" />
             <path stroke="#222034" d="M3 3h38M3 4h38M3 5h38" />
 
-            // This rect is our HP that changes width across the bar depending on hp.
+             {/* This rect is our HP that changes width across the bar depending on hp. */}
             <rect fill="green" x={3} y={2.5} width={HPfill} height={3} />
         </svg>
     );

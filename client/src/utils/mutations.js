@@ -21,4 +21,3 @@ export const MUTATION_ADD_USER = gql`
     }
   }
 `;
-
