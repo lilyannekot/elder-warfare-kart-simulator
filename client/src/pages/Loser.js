@@ -4,8 +4,8 @@ function Loser() {
 
 return (
     <main className="flex-row justify-center">
-        <div>
-            <video src="client/public/assets/game-over-video.mp4"></video>
+        <div className="center">
+            <img src="../../assets/game-over.gif" width="700" height="700" align="middle"></img>
         </div>
     </main>
 )
