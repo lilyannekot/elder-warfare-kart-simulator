@@ -30,8 +30,6 @@ const Signup = () => {
       variables: {
         email: formState.email,
         password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
       },
     });
     const token = mutationResponse.data.addUser.token;
