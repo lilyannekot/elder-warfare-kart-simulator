@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const { defineArguments } = require('graphql/type/definition');
 
 const userSchema = new Schema({
     email: {
@@ -12,7 +13,8 @@ const userSchema = new Schema({
         required: true
     },
     winCount: {
-        type: Number
+        type: Number,
+        default: 0
     }
 });
 
