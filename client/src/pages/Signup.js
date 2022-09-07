@@ -11,7 +11,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  const [addUser, { error, data }] = useMutation(MUTATION_ADD_USER);
+  const [addUser] = useMutation(MUTATION_ADD_USER);
 
   // Update state based on form input changes
   const formChanges = (event) => {
