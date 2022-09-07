@@ -26,14 +26,18 @@ const Signup = () => {
   // Function to allow submitting of form
   const submitForm = async (event) => {
     event.preventDefault();
-    const mutationResponse = await addUser({
-      variables: {
-        email: formState.email,
-        password: formState.password,
-      },
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
+    if (validator.isEmail(formState.email)) {
+      const mutationResponse = await addUser({
+        variables: {
+          email: formState.email,
+          password: formState.password,
+        },
+      });
+      const token = mutationResponse.data.addUser.token;
+      Auth.login(token);
+    } else {
+      alert('You need to enter a valid email address!')
+    }
   };
 
   const navigate = useNavigate();
