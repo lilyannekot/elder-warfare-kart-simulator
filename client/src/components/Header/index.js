@@ -13,9 +13,9 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
-              <button className="btn btn-danger" onClick={logout}>
+              <Link className="btn btn-danger" onClick={logout}>
                 Logout
-              </button>
+              </Link>
             </>
           ) : (
             <>
@@ -25,9 +25,6 @@ const Header = () => {
               </Link>
               <Link className="btn text-light" to="/signup">
                 Signup
-              </Link>
-              <Link className="btn text-light" to="/instructions">
-                Instructions
               </Link>
             </>
           )}

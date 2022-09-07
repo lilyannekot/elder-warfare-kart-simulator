@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -39,6 +39,12 @@ const Login = (props) => {
     });
   };
 
+  const navigate = useNavigate();
+
+  function moveInstructions() {
+    navigate("/instructions");
+  }
+
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12">
@@ -46,9 +52,15 @@ const Login = (props) => {
           <h2>Login</h2>
           <div className="card-body">
             {data ? (
-              <p>
-                <Link to="/instructions">Head to Instructions Page</Link>
-              </p>
+              <div>
+                <p>You have been successfully logged in!</p>
+                <button
+                  onClick={moveInstructions}
+                  className="btn continue-button btn-danger"
+                >
+                  Go to Instructions
+                </button>
+              </div>
             ) : (
               <form className="form-styling" onSubmit={submitForm}>
                 <label htmlFor="email">Email</label>
