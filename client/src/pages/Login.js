@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
 
   // Function to allow submitting of form
@@ -53,7 +53,7 @@ const Login = (props) => {
         <div className="card">
           <h2>Login</h2>
           <div className="card-body">
-            {data ? (
+            {Auth.loggedIn() ? (
               <div>
                 <p>You have been successfully logged in!</p>
                 <button

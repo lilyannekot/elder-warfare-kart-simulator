@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_USER } from "../utils/mutations";
+import { MUTATION_ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { useNavigate } from "react-router-dom";
-//comment
-//var validator = require("validator");
+var validator = require("validator");
 
 const Signup = (props) => {
   const [formState, setFormState] = useState({
     email: "",
     password: "",
   });
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser] = useMutation(MUTATION_ADD_USER);
 
   // Function to allow submitting of form
   const submitForm = async (event) => {
     event.preventDefault();
+    if (validator.isEmail(formState.email)) {
     const mutationResponse = await addUser({
       variables: {
         email: formState.email,
@@ -25,6 +25,9 @@ const Signup = (props) => {
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
     moveInstructions();
+  } else {
+    alert('You need to enter a valid email address!')
+  }
   };
 
   const navigate = useNavigate();

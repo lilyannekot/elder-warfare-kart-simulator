@@ -13,7 +13,8 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-danger" onClick={logout}>
+            <h1><Link style={{ textDecoration: "none", color: "white" }} to="/">Elder Warfare Kart Simulator</Link></h1>
+              <Link className="btn text-light" to="/login" onClick={logout}>
                 Logout
               </Link>
             </>
