@@ -1,6 +1,10 @@
 import decode from "jwt-decode";
 
 class AuthService {
+  getProfile() {
+    return decode(this.getToken());
+  }
+
   loggedIn() {
     const token = this.getToken();
     // If there's a token and it hasn't expired yet, return true. Else, return false
@@ -15,6 +19,8 @@ class AuthService {
       localStorage.removeItem("id_token");
       return true;
     }
+
+    return false;
   }
 
   getToken() {
@@ -23,7 +29,7 @@ class AuthService {
 
   login(idToken) {
     localStorage.setItem("id_token", idToken);
-    window.location.assign("/");
+    window.location.assign('/');
   }
 
   logout() {

@@ -1,18 +1,37 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { MUTATION_ADD_USER } from "../utils/mutations";
+import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { useNavigate } from "react-router-dom";
+//comment
+//var validator = require("validator");
 
-var validator = require("validator");
-
-const Signup = () => {
+const Signup = (props) => {
   const [formState, setFormState] = useState({
     email: "",
     password: "",
   });
-  const [addUser] = useMutation(MUTATION_ADD_USER);
+  const [addUser] = useMutation(ADD_USER);
 
+  // Function to allow submitting of form
+  const submitForm = async (event) => {
+    event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {
+        email: formState.email,
+        password: formState.password,
+      },
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
+    moveInstructions();
+  };
+
+  const navigate = useNavigate();
+
+  const moveInstructions = () => {
+    navigate("/instructions");
+  }
   // Update state based on form input changes
   const formChanges = (event) => {
     const { name, value } = event.target;
@@ -23,28 +42,6 @@ const Signup = () => {
     });
   };
 
-  // Function to allow submitting of form
-  const submitForm = async (event) => {
-    event.preventDefault();
-    if (validator.isEmail(formState.email)) {
-      const mutationResponse = await addUser({
-        variables: {
-          email: formState.email,
-          password: formState.password,
-        },
-      });
-      const token = mutationResponse.data.addUser.token;
-      Auth.login(token);
-    } else {
-      alert('You need to enter a valid email address!')
-    }
-  };
-
-  const navigate = useNavigate();
-
-  function moveInstructions() {
-    navigate("/instructions");
-  }
 
   return (
     <main className="flex-row justify-center">
@@ -53,7 +50,7 @@ const Signup = () => {
           <h2>Signup</h2>
           <div className="card-body">
             <form className="form-styling" onSubmit={submitForm}>
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
               <br />
               <input
                 placeholder="Email"
@@ -63,7 +60,7 @@ const Signup = () => {
                 onChange={formChanges}
               />
               <br />
-              <label for="password">Password</label>
+              <label htmlFor="password">Password</label>
               <br />
               <input
                 placeholder="******"
@@ -77,7 +74,6 @@ const Signup = () => {
                 className="btn btn-danger"
                 style={{ cursor: "pointer" }}
                 type="submit"
-                onClick={moveInstructions}
               >
                 Signup
               </button>

@@ -8,6 +8,29 @@ const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
+
+  // Function to allow submitting of form
+  const submitForm = async (event) => {
+    event.preventDefault();
+
+    try {
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password},
+      });
+
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (error) {
+      console.error(error);
+    }
+
+    // // Clear form values once form is submitted
+    // setFormState({
+    //   email: "",
+    //   password: "",
+    // });
+  };
+
   // Update state based on form input changes
   const formChanges = (event) => {
     const { name, value } = event.target;
@@ -15,27 +38,6 @@ const Login = (props) => {
     setFormState({
       ...formState,
       [name]: value,
-    });
-  };
-
-  // Function to allow submitting of form
-  const submitForm = async (event) => {
-    event.preventDefault();
-
-    try {
-      const { data } = await login({
-        variables: { ...formState },
-      });
-
-      Auth.login(data.login.token);
-    } catch (error) {
-      console.error(error);
-    }
-
-    // Clear form values once form is submitted
-    setFormState({
-      email: "",
-      password: "",
     });
   };
 

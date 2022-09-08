@@ -17,7 +17,7 @@ const resolvers = {
       return {
         token, 
         user
-      }
+      };
     },
 
     deleteUser: async (parent, { userId }) => {
@@ -25,8 +25,7 @@ const resolvers = {
     },
 
     login: async (parent, { email, password }) => {
-      try {
-        const user = await User.findOne({ email });
+      const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError(
@@ -35,6 +34,7 @@ const resolvers = {
       }
 
       const passwordCheck = await user.isCorrectPassword(password);
+      
       if (!passwordCheck) {
         throw new AuthenticationError("Incorrect password!");
       }
@@ -42,11 +42,8 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-      } catch (e) {
-        console.log(e)
-      }    
+      } 
     },
-  },
 };
 
 module.exports = resolvers;
