@@ -1,4 +1,4 @@
-# elder-warfare-kart-simulator
+# Elder Warfare Kart Simulator
 
 ## Description
 
